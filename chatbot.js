@@ -1,4 +1,4 @@
- function returnTime() {
+function returnTime() {
   var now = new Date(Date.now());
   var hours = now.getHours()
   var minutes = now.getMinutes()
@@ -13,7 +13,11 @@ var response = {
 "What is the answer to life the universe and everything?":"42",
 "Hi":"Sup bluh",
 "Where you from?":"Everywhere, but at the same time nowhere",
-"What time is it?": "It is currently " + returnTime() + "."
+"What time is it?": "It is currently " + returnTime() + ".",
+"How are you?":"I'm alright I guess",
+"What are your plans for this election?":"Hope for a miracle",
+"Where are you?":"Everywhere",
+"What's your name?":"4NTH0NY"
 }
 
 function speak() {
@@ -22,3 +26,9 @@ function speak() {
   var answer = response[userInput]
   $("#chat-area").prepend(answer + "<br>")
 }
+
+$(document).keydown(function(e) {
+ if (e.keyCode == 13) {
+   speak()
+ }
+});
